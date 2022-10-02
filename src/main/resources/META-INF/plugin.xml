@@ -6,13 +6,10 @@
 
     <depends>com.intellij.modules.platform</depends>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.donkichen.bettercodereview.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.donkichen.bettercodereview.services.MyProjectService"/>
-    </extensions>
+    <actions>
 
-    <applicationListeners>
-        <listener class="com.github.donkichen.bettercodereview.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
+        <action id="bettercodereview.TestAction" class="com.github.donkichen.bettercodereview.TestAction" text="测试">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt G"/>
+        </action>
+    </actions>
 </idea-plugin>
